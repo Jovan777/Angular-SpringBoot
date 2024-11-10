@@ -1,0 +1,36 @@
+
+.main-header{
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links li{
+    margin: 0 10px;
+}
+
+.nav-links a{
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
+    font-size: 1.5rem;
+    
+}
+
+
+
+.nav-links :hover{
+    background-color: rgb(59, 126, 189)
+}
