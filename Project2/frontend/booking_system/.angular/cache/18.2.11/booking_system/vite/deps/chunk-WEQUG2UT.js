@@ -4,7 +4,7 @@ import {
   isDevMode,
   numberAttribute,
   take
-} from "./chunk-2CASZS3J.js";
+} from "./chunk-X6KQNGFA.js";
 
 // node_modules/ng-zorro-antd/fesm2022/ng-zorro-antd-core-environments.mjs
 var environment = {
@@ -31,6 +31,9 @@ function consoleCommonBehavior(consoleFunc, ...args) {
 var warn = (...args) => consoleCommonBehavior((...arg) => console.warn(PREFIX, ...arg), ...args);
 
 // node_modules/@angular/cdk/fesm2022/coercion.mjs
+function coerceBooleanProperty(value) {
+  return value != null && `${value}` !== "false";
+}
 function coerceNumberProperty(value, fallbackValue = 0) {
   if (_isNumberValue(value)) {
     return Number(value);
@@ -56,6 +59,9 @@ function coerceElement(elementOrRef) {
 // node_modules/ng-zorro-antd/fesm2022/ng-zorro-antd-core-util.mjs
 function isNotNil(value) {
   return typeof value !== "undefined" && value !== null;
+}
+function toBoolean(value) {
+  return coerceBooleanProperty(value);
 }
 function numberAttributeWithZeroFallback(value) {
   return numberAttribute(value, 0);
@@ -146,21 +152,32 @@ function updateCSS(css, key, options = {}) {
   newNode?.setAttribute(getMark(options), key);
   return newNode;
 }
+function getStatusClassNames(prefixCls, status, hasFeedback) {
+  return {
+    [`${prefixCls}-status-success`]: status === "success",
+    [`${prefixCls}-status-warning`]: status === "warning",
+    [`${prefixCls}-status-error`]: status === "error",
+    [`${prefixCls}-status-validating`]: status === "validating",
+    [`${prefixCls}-has-feedback`]: hasFeedback
+  };
+}
 
 export {
   environment,
-  warn,
   coerceNumberProperty,
   coerceArray,
   coerceCssPixelValue,
   coerceElement,
+  warn,
   isNotNil,
+  toBoolean,
   numberAttributeWithZeroFallback,
   toCssPixel,
   isTouchEvent,
   getEventPosition,
   inNextTick,
   canUseDom,
-  updateCSS
+  updateCSS,
+  getStatusClassNames
 };
-//# sourceMappingURL=chunk-3Z46CGNL.js.map
+//# sourceMappingURL=chunk-WEQUG2UT.js.map

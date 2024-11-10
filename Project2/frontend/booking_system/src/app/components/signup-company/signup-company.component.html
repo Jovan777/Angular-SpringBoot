@@ -1,0 +1,51 @@
+
+<div class="bg">
+    <div class="parent">
+      <div class="child">
+        <div nz-col>
+          <h1 style="margin-left: 55px;">Company SignUp</h1>
+        </div>
+  
+        <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+          <nz-form-item>
+            <nz-form-control nzHasFeedback nzErrorTip="Invalid email">
+              <input type="text" id="email" formControlName="email" nz-input placeholder="Email" />
+            </nz-form-control>
+          </nz-form-item>
+
+          <nz-form-item>
+            <nz-form-control  >
+              <input type="password" id="password" formControlName="password" nz-input placeholder="Password" nz-input placeholder="Password" />
+            </nz-form-control>
+          </nz-form-item>
+
+          <nz-form-item>
+            <nz-form-control nzHasFeedback nzErrorTip="The passwords do not match">
+              <input type="password" id="checkPassword" formControlName="checkPassword" nz-input placeholder="Check password" />
+            </nz-form-control>
+          </nz-form-item>
+
+
+          <nz-form-item>
+            <nz-form-control >
+              <input type="text" id="name" formControlName="name" nz-input placeholder="Name" />
+            </nz-form-control>
+          </nz-form-item>
+
+          <nz-form-item>
+            <nz-form-control >
+              <input type="text" id="phone" formControlName="phone" nz-input placeholder="Phone" />
+            </nz-form-control>
+          </nz-form-item>
+
+          <button >
+            Register
+          </button>
+            <a routerLink="/login">Login now!</a>
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,108 @@
+
+/* Pozadina forme */
+.bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f2f5;
+    height: 85vh;
+    padding: 10px;
+  }
+  
+  .parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .child {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  /* Stil za naslov */
+  .child h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 20px;
+  }
+  
+  /* Stil za formu */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Stil za stavke u formi */
+  .nz-form-item {
+    margin-bottom: 16px;
+  }
+  
+  /* Stil za polja za unos */
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+  
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    border-color: #40a9ff;
+    outline: none;
+    box-shadow: 0 0 3px rgba(64, 169, 255, 0.5);
+  }
+  
+  /* Stil za dugme */
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #1890ff;
+    color: #ffffff;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #40a9ff;
+  }
+  
+  button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(24, 144, 255, 0.5);
+  }
+  
+  /* Stil za link za prijavu */
+  a {
+    color: #1890ff;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Stil za poruke o greškama */
+  .error-message {
+    color: #ff4d4f;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  
