@@ -8,6 +8,8 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import com.example.task_spring.services.jwt.UserService;
 import com.example.task_spring.utils.JwtUtil;
 
+import ch.qos.logback.core.util.StringUtil;
+import io.micrometer.common.util.StringUtils;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -24,9 +26,19 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter{
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
-            throws ServletException, IOException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'doFilterInternal'");
+        throws ServletException, IOException {
+        String authorizationHeader = request.getHeader("Authorization");
+        final String jwt;
+        String userEmail = null;
+        if(StringUtils.isEmpty(authorizationHeader) || !authorizationHeader.startsWith("Bearer ")){
+            filterChain.doFilter(request, response);
+            return;
+        }
+        jwt = authorizationHeader.substring(7);
+        userEmail = jwtUtil.extractUsername(jwt);
+        if(StringUtils)
+
+
     }
 
     
