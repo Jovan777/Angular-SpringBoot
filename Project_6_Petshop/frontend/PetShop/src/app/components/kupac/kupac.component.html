@@ -1,0 +1,28 @@
+<div class="container">
+
+    <h1>Dobrodosli korisnice : {{user.korisnickoIme}}</h1>
+    <table>
+        <tr>
+            <th>Naziv</th>
+            <th>Opis</th>
+            <th>Cena</th>
+        </tr>
+        @for(proizvod of proizvodi; track proizvod.naziv){
+            <tr [ngStyle]="{'background-color': proizvod.promocija ? 'lightgreen' : ''}">
+                <td>{{proizvod.naziv}}</td>
+                <td>{{proizvod.opis}}</td>
+                <td>{{proizvod.cena}}</td>
+                <td>
+                    <input type="checkbox" [(ngModel)]="proizvod.selektovan">
+                </td>
+                <td>
+                    <input type="number" [(ngModel)]="proizvod.kolicina" [disabled]="!proizvod.kolicina" min="1">
+                </td>
+            </tr>
+        }
+    </table>
+    <button (click)="naruci()">Naruci</button>
+    <hr><hr>
+    <button (click)="logout()">Logout</button>
+
+</div>

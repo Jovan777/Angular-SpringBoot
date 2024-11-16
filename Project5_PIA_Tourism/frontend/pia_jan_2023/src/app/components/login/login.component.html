@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>Login</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <label for="">Korisnicko ime</label>
+      <input type="text" name="korisnickoIme" formControlName = "korisnickoIme"
+      placeholder="Unesite korisnicko ime">
+        <br>
+
+      <label for="">Lozinka</label>
+      <input type="text" name="lozinka" formControlName = "lozinka"
+      placeholder="Unesite lozinku">
+    <br>
+      <label for="tip">Tip korisnika:</label>
+      <label for="">Putnik</label>
+      <input type="radio" id="Putnik" name="tip" formControlName = "tip" value = "Putnik">
+
+      <label for="">Agencija</label>
+      <input type="radio" id="Agencija" name="tip" formControlName = "tip" value = "Agencija">
+      
+    <br>
+    <button type="submit">Prijava</button>
+    
+    @if(errorMessage){
+        <p>{{errorMessage}}</p>
+    }
+  
+    </form> 
+  </div>

@@ -1,0 +1,30 @@
+
+<div class="container">
+    <h1>Dobrodosli : {{agencijaData.korisnickoime}} | PIB : {{agencijaData.pib}}</h1>
+    <div class="tabela">
+        <table>
+            <tr>
+                <th>Tip usluge</th>
+                <th>Lokacija od</th>
+                <th>Lokacija do</th>
+                <th>Period</th>
+                <th>Broj preostalih mesta</th>
+                <th>Cena</th>
+            </tr>
+            <tbody>
+                @for ( usluga of usluge; track usluga.id) {
+                    <tr>
+                      <td>{{ usluga.tip }}</td>
+                      <td>{{ usluga.tip === 'hotel' ? '' : usluga.lokacijaOd }}</td>
+                      <td>{{ usluga.lokacijaDo }}</td>
+                      <td>{{ usluga.period }}</td>
+                      <td>{{ usluga.brojMesta }}</td>
+                      <td>{{ usluga.cena }}</td>
+                    </tr>
+                  }
+            </tbody>
+        </table>
+    </div>
+
+</div>
+

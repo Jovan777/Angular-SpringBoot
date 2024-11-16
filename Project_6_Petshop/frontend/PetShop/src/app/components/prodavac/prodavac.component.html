@@ -1,0 +1,35 @@
+<div class="container">
+    <h2>Dobrodosli korisnice : {{korisnik.korisnickoIme}}</h2>
+    <h3>Vasi podaci : </h3>
+    <p>Ime : {{korisnik.ime}}</p>
+    <p>Prezime : {{korisnik.prezime}}</p>
+    <p>Mejl : {{korisnik.mejl}}</p>
+    <p>Datum rodjenja : {{korisnik.datumRodjenja}}</p>
+
+    <hr><hr>
+    <h3>Narudzbine</h3>
+    <table>
+        <tr>
+            <th>Ime kupca</th>
+            <th>Datum</th>
+            <th>Naruceni Proizvodi</th>
+        </tr>
+        @for(narudzbina of narudzbine; track narudzbina.id){
+        <tr>
+
+            <td>{{narudzbina.kupac.korisnickoIme}}</td>
+            <td>{{narudzbina.datum}}</td>
+            @for(proizvod of naruceniProizvodi[narudzbina.id]; track proizvod.id){
+                <td>{{proizvod.proizvod.naziv}}</td>
+                <td>{{proizvod.kolicina}}</td>
+            }
+        </tr>
+        }
+
+    </table>
+    
+    <hr><hr><hr>
+    <h3>Najbolji kupac : {{najbolji_kupac.korisnickoIme}}</h3>
+
+
+</div>

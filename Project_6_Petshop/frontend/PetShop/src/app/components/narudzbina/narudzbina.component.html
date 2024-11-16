@@ -1,0 +1,18 @@
+
+<div class="container">
+    <h2>Vasa narudzbina</h2>
+    <ul>
+        @for(proizvod of proizvodi; track proizvod.naziv){
+            <span>{{proizvod.naziv}} - Kolicina : {{proizvod.kolicina}}</span>
+            <button (click)="ukloniProizvod(proizvod)" class="btn btn-danger">Ukloni</button>
+        }
+        
+    </ul>
+
+    @if(proizvodi.length > 0){
+        <button (click)="potvrdiNarudzbinu()" [disabled]="proizvodi.length === 0">
+            Potvrdi narudzbinu
+        </button>
+    }
+
+</div>

@@ -1,0 +1,26 @@
+
+
+
+
+<div class="container">
+    <h1>Login</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <label for="">Korisnicko ime : </label>
+        <input type="text" formControlName = "korisnickoIme" name="korisnickoIme" placeholder="Unesite korisnicko ime">
+        <br>
+        <label for="">Lozinka</label>
+        <input type="text" name="lozinka" formControlName = "lozinka">
+        <br>
+        <select name="tip" id="tip" formControlName = "tip">
+            <option value="kupac">Kupac</option>
+            <option value="prodavac">Prodavac</option>
+        </select>
+        <br>
+        <button type="submit">Prijavite se</button>
+    </form>
+    @if(errorMessage){
+        <p style = "color: red">{{errorMessage}}</p>
+    }
+
+
+</div>
