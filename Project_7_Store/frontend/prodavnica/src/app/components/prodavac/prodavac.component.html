@@ -1,0 +1,49 @@
+
+<div class="container">
+    <h1>Dobrodosli korisnice : {{korisnik.korisnickoIme}}</h1>
+    <hr>
+    <h2>Proizvodi</h2>
+    <input type="text" placeholder="Pretrazite po nazivu" 
+        name="" id="" [(ngModel)]="pretraga" (input)="filtriraj()">
+    <table>
+        <tr>
+            <th>Naziv</th>
+            <th>Cena</th>
+            <th>Kolicina</th>
+        </tr>
+        @for(proizvod of prikazaniProizvodi ; track proizvod.id){
+            <tr>
+                <td>{{proizvod.naziv}}</td>
+                <td>{{proizvod.cena}}</td>
+                <td>{{proizvod.kolicina}}</td>
+            </tr>
+        }
+    </table>
+    <hr><hr>
+    <h3>Narudzbine</h3>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Kupac</th>
+            <th>Proizvod</th>
+            <th>Kolicina</th>
+        </tr>
+        @for(narudzbina of narudzbine ; track narudzbina.idN){
+            <tr [ngClass]="{ 'red' : narudzbina.kolicina > narudzbina.proizvod.kolicina}">
+                <td>{{narudzbina.idN}}</td>
+                <td>{{narudzbina.kupac.korisnickoIme}}</td>
+                <td>{{narudzbina.proizvod.naziv}}</td>
+                <td>{{narudzbina.kolicina}}</td>
+                @if(narudzbina.proizvod.kolicina >= narudzbina.kolicina){
+                    <button class="btn btn-primary" (click)="prihvatiNarudzbinu(narudzbina.idN)">Prihvati</button>
+                }
+            </tr>
+        }
+
+    </table>
+
+
+
+    <hr><hr>
+    <button (click)="logout()">Logout</button>
+</div>

@@ -1,0 +1,26 @@
+<div>
+    <h2>Dobrodosli korisnice : {{korisnik.korisnickoIme}}</h2>
+    <h3>Proizvodi</h3>
+    <table>
+        <tr>
+            <th>Naziv</th>
+            <th>Cena</th>
+        </tr>
+        @for(proizvod of proizvodi; track proizvodi.id){
+            <tr>
+                <td>{{proizvod.naziv}}</td>
+                <td>{{proizvod.cena}}</td>
+                <td>{{proizvod.id}}</td>
+                <td>
+                    <input type="checkbox" name="odabraniProizvod" (change)="odaberiProizvod(proizvod)">
+                </td>
+                <td>
+                    <input type="number" min="1" [value]="1" [(ngModel)]="proizvod.kolicina">
+                </td>
+            </tr>
+        }
+    </table>
+    <button (click)="naruci()">Narucite</button>
+    <hr><hr>
+    <button (click)="logout()">Logout</button>
+</div>
